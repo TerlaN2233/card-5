@@ -1,0 +1,152 @@
+$magazine: #FE3C02;
+$color-one: #0063d1;
+$header-under-1: #EFEFEF;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-facebook: #3B5998;
+$color-green: #008000;
+$color-twitter: #00B6F1;
+$WhatsApp: #075e54;
+$Telegram: #0088cc;
+$Google: #C20806;
+$Youtube: #C31A1E;
+$color-pastel-green: #77dd77;
+$color-best-2018: #ec1b5a;
+$color-best-20182: #ea094b;
+$color-border: #c4c4c4;
+$colorThree: #cdcdcd;
+$color-coral: #ff7f50;
+$color-cyan: #00ffff;
+$color-magenta: #ff5dff;
+$color-turquoise: #40e0d0;
+$color-teal: #008080;
+$color-olive: #808000;
+$color-lime: #00ff00;
+$colorOne: #D0E3AB;
+$colorTan: #D2B48C;
+$color-silver1: #c4c4c4;
+$color-silver2: #c0c0c0;
+$color-silver3: #c0c0c066;
+@mixin paddingZero {
+  padding-left: 0px!important;
+  padding-right: 0 !important;
+}
+@mixin marginauto {
+  margin-right: auto;
+  margin-left: auto;
+}
+@mixin textSmall {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@mixin imgcenter {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@mixin flexwrapcenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+body {
+  background: $color-silver3;
+
+  .h1 {
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 1.3px;
+    color: $color-white;
+    background: linear-gradient(to top right, $color-facebook, $color-best-2018, $color-best-20182);
+  }
+
+  .card {
+    @include marginauto();
+    @include flexwrapcenter();
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+
+    .card-file {
+      width: 210px;
+      background: $color-white;
+      height: 260px;
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      transition: 0.1s ease;
+      &:hover{
+        box-shadow: 0 0 8px 5px rgba(50, 60, 15, 0.5);
+        transition: 0.1s ease;
+      }
+
+
+
+      .img-div {
+        @include marginauto();
+        // width: 150px;
+        height: 150px;
+
+        .card-img {
+          @include imgcenter();
+          padding-top: 10px;
+        }
+      }
+
+      .container2 {
+        span {
+          display: block;
+          width: 100%;
+          padding-top: 5px;
+        }
+
+        span:nth-child(1) {
+          @include textSmall();
+          margin-top: 10px;
+        }
+
+        span:nth-child(2) {
+          color: $color-silver2;
+          letter-spacing: 1.3px;
+          text-transform: capitalize;
+        }
+      }
+
+      .add-cards-price {
+        padding-top: 5px;
+        display: flex;
+
+        .price {
+          flex: 1;
+          padding: 5px 0;
+          border: 1px solid $color-silver1;
+          font-weight: bold;
+          font-size: calc(2rem - 16px);
+          margin-right: 10px;
+          border-radius: 5px;
+        }
+
+        .musor {
+          flex: 1;
+          padding: 5px 0;
+          border: 1px solid $color-silver1;
+          background: $color-green;
+          color: $color-white;
+          border-radius: 5px;
+
+          i:nth-child(1) {
+            font-size: 10px;
+            font-weight: 100;
+            padding-right: 3px;
+          }
+        }
+      }
+    }
+  }
+}
